@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  background-color: #313131;
+}
+
+h1 {
+  font: 800 100px "Open Sans", sans-serif;
+  color: white;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.blocks {
+  width: 5vw;
+  height: 5vh;
+  animation: img 0.75s ease-in-out forwards;
+}
+
+.blocks:nth-child(even) {
+  animation: img 1s ease-in-out forwards;
+}
+
+.blocks:nth-child(7n + 3) {
+  animation: img 2.5s ease-in-out forwards;
+}
+
+.blocks:nth-child(7n + 7) {
+  animation: img 1.5s ease-in-out forwards;
+}
+
+@keyframes img {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateY(1000px);
+  }
+  50% {
+    opacity: 1;
+    background-image: url(images/palestine.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    background-image: url(images/palestine.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+}
